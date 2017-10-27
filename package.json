@@ -1,0 +1,25 @@
+{
+  "name": "bucketmapperapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex": "knex"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idaliaramos/BucketMapperAPI.git"
+  },
+  "author": "idalia ramos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idaliaramos/BucketMapperAPI/issues"
+  },
+  "homepage": "https://github.com/idaliaramos/BucketMapperAPI#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "knex": "^0.13.0",
+    "pg": "^7.3.0"
+  }
+}
