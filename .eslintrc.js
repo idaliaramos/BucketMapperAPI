@@ -1,6 +1,9 @@
 module.exports = {
   root: true,
   extends: ['eslint:recommended'],
+  parserOptions: {
+    ecmaVersion: 2017
+  },
   env: {
     browser: true,
     commonjs: true,
@@ -10,7 +13,7 @@ module.exports = {
   },
   rules: {
     'no-unused-vars': ['error', { args: 'none' }]
-    // 'no-console': 'off',
+    //'no-console': 'off',
     // 'no-debugger': 'off'
   }
 };

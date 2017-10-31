@@ -14,9 +14,9 @@ exports.up = function(knex, Promise) {
       .onDelete('CASCADE')
       .index();
     table.string('name').notNullable().defaultTo('');
-    table.string('location');
-    table.string('url');
-    table.string('description');
+    table.string('location').defaultTo('');
+    table.string('url').defaultTo('');
+    table.string('description').defaultTo('');
     table.timestamp('createdAt').notNullable().defaultTo(knex.fn.now());
   });
 };
