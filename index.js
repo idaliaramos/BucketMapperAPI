@@ -1,11 +1,12 @@
-const { JWT_KEY } = require('./env');
+// const { JWT_KEY } = require('./env');
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 const jwt = require('express-jwt');
-const UnauthorizedError = require('express-jwt/lib/errors/UnauthorizedError');
+// const nodemon = require('nodemon');
+// const UnauthorizedError = require('express-jwt/lib/errors/UnauthorizedError');
 const Boom = require('boom');
 
 const server = express();
@@ -13,6 +14,12 @@ const server = express();
 server.use(bodyParser.json());
 server.use(morgan('dev'));
 server.use(cors()); // TODO: lock this down further, currently allows ALL requests
+// function writeTextFile(filepath, output) {
+//   var txtFile = new File(filepath);
+//   txtFile.open('w'); //
+//   txtFile.writeln(output);
+//   txtFile.close();
+// }
 // server.use(
 //   jwt({
 //     secret: JWT_KEY,
@@ -22,21 +29,21 @@ server.use(cors()); // TODO: lock this down further, currently allows ALL reques
 //     issuer: 'bucketMapper'
 //   })
 // );
-server.use((request, response, next) => {
-  const authenticatedUserId = request.jwt ? request.jwt.payload.sub : undefined;
-  request.authenticatedUserId =
-    Number.isFinite(authenticatedUserId) && authenticatedUserId > 0
-      ? authenticatedUserId
-      : null;
-  next();
-});
+// server.use((request, response, next) => {
+//   const authenticatedUserId = request.jwt ? request.jwt.payload.sub : undefined;
+//   request.authenticatedUserId =
+//     Number.isFinite(authenticatedUserId) && authenticatedUserId > 0
+//       ? authenticatedUserId
+//       : null;
+//   next();
+// });
 
-const authenticationRouter = require('./lib/instances/authenticationRouter');
+// const authenticationRouter = require('./lib/instances/authenticationRouter');
 const usersRouter = require('./lib/instances/usersRouter');
 const destinationsRouter = require('./lib/instances/destinationsRouter');
-const adventuresRouter = require('./lib/instances/adventuresRouter');
+// const adventuresRouter = require('./lib/instances/adventuresRouter');
 //const adventtureTagsRouter = require('./lib/instances/adventureTagsRouter');
-server.use(authenticationRouter);
+// server.use(authenticationRouter);
 server.use(usersRouter);
 server.use(destinationsRouter);
 // server.use(adventuresRouter);

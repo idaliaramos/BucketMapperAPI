@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "knex": "knex"
+    "start": "nodemon index.js",
+    "knex": "knex",
+    "reset-db": "npm run knex migrate:rollback && npm run knex migrate:latest && npm run knex seed:run"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
     "morgan": "^1.9.0",
+    "nodemon": "^1.12.1",
     "pg": "^7.3.0",
     "pluralize": "^7.0.0",
     "promisify": "0.0.3",
