@@ -23,12 +23,12 @@ server.use(cors()); // TODO: lock this down further, currently allows ALL reques
 // const authenticationRouter = require('./lib/instances/authenticationRouter');
 const usersRouter = require('./lib/instances/usersRouter');
 const destinationsRouter = require('./lib/instances/destinationsRouter');
-// const adventuresRouter = require('./lib/instances/adventuresRouter');
+const adventuresRouter = require('./lib/instances/adventuresRouter');
 //const adventtureTagsRouter = require('./lib/instances/adventureTagsRouter');
 // server.use(authenticationRouter);
 server.use(usersRouter);
 server.use(destinationsRouter);
-// server.use(adventuresRouter);
+server.use(adventuresRouter);
 // server.use(adventureTagsRouter);
 server.all('*', (request, response, next) => response.sendStatus(404));
 
