@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon index.js",
     "knex": "knex",
     "reset-db": "npm run knex migrate:rollback && npm run knex migrate:latest && npm run knex seed:run"
@@ -33,12 +33,22 @@
     "lodash.isfunction": "^3.0.8",
     "lodash.omit": "^4.5.0",
     "lodash.pick": "^4.4.0",
+    "mocha": "^4.0.1",
     "morgan": "^1.9.0",
+    "node-mocks-http": "^1.6.6",
     "nodemon": "^1.12.1",
     "pg": "^7.3.0",
     "pluralize": "^7.0.0",
     "promisify": "0.0.3",
     "router": "^1.3.2",
     "yup": "^0.23.0"
+  },
+  "devDependencies": {
+    "dotenv": "^4.0.0",
+    "eslint": "^4.8.0",
+    "jest": "^21.2.1",
+    "mock-knex": "^0.3.9",
+    "node-mocks-http": "^1.6.6",
+    "nodemon": "^1.12.1"
   }
 }
