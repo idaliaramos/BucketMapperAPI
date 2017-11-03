@@ -22,7 +22,7 @@ server.use(cors()); // TODO: lock this down further, currently allows ALL reques
 server.use(
   jwt({
     secret: JWT_KEY,
-    requestPropery: 'jwe.payload',
+    requestProperty: 'jwt.payload',
     credentialsRequired: false,
     audience: 'bucketMapper',
     issuer: 'bucketMapper'
@@ -35,7 +35,8 @@ server.use((request, response, next) => {
     Number.isFinite(authenticatedUserId) && authenticatedUserId > 0
       ? authenticatedUserId
       : null;
-  next;
+
+  next();
 });
 
 const authenticationRouter = require('./lib/instances/authenticationRouter');
