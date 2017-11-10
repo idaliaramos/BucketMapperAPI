@@ -29,15 +29,33 @@ server.use(
   })
 );
 
-server.use((request, response, next) => {
-  const authenticatedUserId = request.jwt ? request.jwt.payload.sub : undefined;
-  request.authenticatedUserId =
-    Number.isFinite(authenticatedUserId) && authenticatedUserId > 0
-      ? authenticatedUserId
-      : null;
+var unless = function(path, middleware) {
+  return function(req, res, next) {
+    if (path === req.path) {
+      return next();
+    } else {
+      return middleware(req, res, next);
+    }
+  };
+};
 
-  next();
-});
+server.use(
+  unless('/authenticate', (request, response, next) => {
+    const authenticatedUserId = request.jwt
+      ? request.jwt.payload.sub
+      : undefined;
+    request.authenticatedUserId =
+      Number.isFinite(authenticatedUserId) && authenticatedUserId > 0
+        ? authenticatedUserId
+        : null;
+
+    if (request.authenticatedUserId == null) {
+      response.sendStatus(401);
+    }
+
+    next();
+  })
+);
 
 const authenticationRouter = require('./lib/instances/authenticationRouter');
 const usersRouter = require('./lib/instances/usersRouter');
