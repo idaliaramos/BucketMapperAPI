@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test-super": "mocha lib/tests/supertest.js",
     "start": "nodemon index.js",
     "knex": "knex",
     "reset-db": "npm run knex migrate:rollback && npm run knex migrate:latest && npm run knex seed:run"
@@ -23,6 +24,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "boom": "^6.0.0",
+    "chai": "^4.1.2",
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
@@ -52,6 +54,7 @@
     "jest": "^21.2.1",
     "mock-knex": "^0.3.9",
     "node-mocks-http": "^1.6.6",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "supertest": "^3.0.0"
   }
 }

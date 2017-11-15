@@ -68,7 +68,16 @@ server.use(destinationsRouter);
 server.use(adventuresRouter);
 // server.use(adventureTagsRouter);
 server.all('*', (request, response, next) => response.sendStatus(404));
-
+server.use((err, _req, res, _next) => {
+  if (err.output.statusCode) {
+    res
+      .status(err.output.statusCode)
+      .set('Content-Type', 'text/plain')
+      .send(err);
+  }
+  // console.log(err, 'this is the error');
+  // res.send(err);
+});
 const port =
   process.env.PORT && /^\d+$/.test(process.env.PORT)
     ? parseInt(process.env.PORT)
@@ -77,3 +86,5 @@ const port =
 server.listen(port, () => {
   console.log(`Listening on port ${port}`); // eslint-disable-line no-console
 });
+
+module.exports = server;
