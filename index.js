@@ -13,12 +13,6 @@ const server = express();
 server.use(bodyParser.json());
 server.use(morgan('dev'));
 server.use(cors()); // TODO: lock this down further, currently allows ALL requests
-// function writeTextFile(filepath, output) {
-//   var txtFile = new File(filepath);
-//   txtFile.open('w'); //
-//   txtFile.writeln(output);
-//   txtFile.close();
-// }
 server.use(
   jwt({
     secret: JWT_KEY,
@@ -69,15 +63,15 @@ server.use(adventuresRouter);
 // server.use(adventureTagsRouter);
 server.all('*', (request, response, next) => response.sendStatus(404));
 server.use((err, _req, res, _next) => {
-  if (err.output.statusCode) {
-    res
-      .status(err.output.statusCode)
-      .set('Content-Type', 'text/plain')
-      .send(err);
+  console.log('outside', err.status);
+  if (err.status) {
+    console.log('i am in the server user error', err.status);
+    res.status(err.status).set('Content-Type', 'text/plain').send(err);
   }
   // console.log(err, 'this is the error');
   // res.send(err);
 });
+//that broke my things
 const port =
   process.env.PORT && /^\d+$/.test(process.env.PORT)
     ? parseInt(process.env.PORT)
