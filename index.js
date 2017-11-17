@@ -34,7 +34,9 @@ var unless = function(path, middleware) {
 };
 
 server.use(
+  //TODO add user route
   unless('/authenticate', (request, response, next) => {
+    // console.log('i am unautho');
     const authenticatedUserId = request.jwt
       ? request.jwt.payload.sub
       : undefined;
@@ -44,6 +46,7 @@ server.use(
         : null;
 
     if (request.authenticatedUserId == null) {
+      console.log('i am unautho');
       response.sendStatus(401);
     }
 
