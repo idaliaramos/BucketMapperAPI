@@ -22,36 +22,14 @@ server.use(
     issuer: 'bucketMapper'
   })
 );
-
-var unless = function(path, middleware) {
-  return function(req, res, next) {
-    if (path === req.path) {
-      return next();
-    } else {
-      return middleware(req, res, next);
-    }
-  };
-};
-
-server.use(
-  //TODO what is the syntax????
-  //  { path: ['/users', '/authenticate'] }
-  unless('/authenticate', (request, response, next) => {
-    // console.log('i am unautho');
-    const authenticatedUserId = request.jwt
-      ? request.jwt.payload.sub
-      : undefined;
-    request.authenticatedUserId =
-      Number.isFinite(authenticatedUserId) && authenticatedUserId > 0
-        ? authenticatedUserId
-        : null;
-    // if (request.authenticatedUserId == null) {
-    //   response.sendStatus(401);
-    // }
-
-    next();
-  })
-);
+server.use((request, response, next) => {
+  const authenticatedUserId = request.jwt ? request.jwt.payload.sub : undefined;
+  request.authenticatedUserId =
+    Number.isFinite(authenticatedUserId) && authenticatedUserId > 0
+      ? authenticatedUserId
+      : null;
+  next();
+});
 
 const authenticationRouter = require('./lib/instances/authenticationRouter');
 const usersRouter = require('./lib/instances/usersRouter');
