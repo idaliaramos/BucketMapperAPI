@@ -34,7 +34,8 @@ var unless = function(path, middleware) {
 };
 
 server.use(
-  //TODO add user route
+  //TODO what is the syntax????
+  //  { path: ['/users', '/authenticate'] }
   unless('/authenticate', (request, response, next) => {
     // console.log('i am unautho');
     const authenticatedUserId = request.jwt
@@ -44,9 +45,7 @@ server.use(
       Number.isFinite(authenticatedUserId) && authenticatedUserId > 0
         ? authenticatedUserId
         : null;
-
     if (request.authenticatedUserId == null) {
-      console.log('i am unautho');
       response.sendStatus(401);
     }
 
