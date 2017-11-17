@@ -43,7 +43,7 @@ server.use(adventuresRouter);
 // server.use(adventureTagsRouter);
 server.all('*', (request, response, next) => response.sendStatus(404));
 server.use((err, _req, res, _next) => {
-  console.log('outside', err.status);
+  // console.log('outside', err.status);
   if (err.status) {
     console.log('i am in the server user error', err.status);
     res.status(err.status).set('Content-Type', 'text/plain').send(err);

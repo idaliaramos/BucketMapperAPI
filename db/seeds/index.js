@@ -8,9 +8,10 @@ exports.seed = function(knex, Promise) {
         [
           {
             id: 1,
-            name: 'Idalia',
-            email: 'idaliaramos2@gmail.com',
-            hashedPassword: '$2a$10$Z6BgoE6XmeAUdQthisIsaTestTfY0uQE0tDDjIHdKy'
+            name: 'idalia',
+            email: 'idalia@gmail.com',
+            hashedPassword:
+              '$2a$10$nAVDMfgZLsDxKcRxbY8aoObH5dfJ01XsreR1jm5RuhxBlqfSK82ki'
           },
           {
             id: 2,
@@ -33,7 +34,9 @@ exports.seed = function(knex, Promise) {
           userId: 1,
           name: 'Iceland',
           url:
-            'https://guidetoiceland.imgix.net/4928/x/0/top-10-beautiful-waterfalls-of-iceland-1.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-1.1.0&w=883&s=181dbff8aab1eb0ae2931751e822d320'
+            'https://guidetoiceland.imgix.net/4928/x/0/top-10-beautiful-waterfalls-of-iceland-1.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-1.1.0&w=883&s=181dbff8aab1eb0ae2931751e822d320',
+          createdAt: '2017-11-17T20:05:18.814Z',
+          updatedAt: '2017-11-17T20:05:18.814Z'
         },
         {
           id: 2,
