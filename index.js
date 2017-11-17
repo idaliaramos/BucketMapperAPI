@@ -45,9 +45,9 @@ server.use(
       Number.isFinite(authenticatedUserId) && authenticatedUserId > 0
         ? authenticatedUserId
         : null;
-    if (request.authenticatedUserId == null) {
-      response.sendStatus(401);
-    }
+    // if (request.authenticatedUserId == null) {
+    //   response.sendStatus(401);
+    // }
 
     next();
   })
