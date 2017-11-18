@@ -48,10 +48,8 @@ server.use((err, _req, res, _next) => {
     console.log('i am in the server user error', err.status);
     res.status(err.status).set('Content-Type', 'text/plain').send(err);
   }
-  // console.log(err, 'this is the error');
-  // res.send(err);
 });
-//that broke my things
+
 const port =
   process.env.PORT && /^\d+$/.test(process.env.PORT)
     ? parseInt(process.env.PORT)
