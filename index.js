@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 const jwt = require('express-jwt');
 // const UnauthorizedError = require('express-jwt/lib/errors/UnauthorizedError');
-const Boom = require('boom');
+//const Boom = require('boom');
 
 const server = express();
 
