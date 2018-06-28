@@ -4,11 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node ./bin/www",
+    "knex": "knex",
+    "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run;",
+    "nodemon": "nodemon ./bin/www",
     "test": "jest",
     "test-super": "mocha lib/tests/supertest.js",
-    "start": "nodemon index.js",
     "knex": "knex",
     "reset-db": "npm run knex migrate:rollback && npm run knex migrate:latest && npm run knex seed:run"
+
+
+
+
   },
   "repository": {
     "type": "git",
