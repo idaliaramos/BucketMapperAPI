@@ -7,8 +7,7 @@ module.exports = {
       host: PGHOST,
       database: PGDATABASE,
       user: PGUSER,
-      password: PGPASSWORD,
-      "port": 5433,
+      password: PGPASSWORD
     },
     migrations: {
       directory: './db/migrations'
