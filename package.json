@@ -9,8 +9,7 @@
     "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run;",
     "nodemon": "nodemon ./bin/www",
     "test": "jest",
-    "test-super": "mocha lib/tests/supertest.js",
-    "reset-db": "npm run knex migrate:rollback && npm run knex migrate:latest && npm run knex seed:run"
+    "test-super": "mocha lib/tests/supertest.js"
   },
   "repository": {
     "type": "git",
@@ -60,6 +59,6 @@
     "supertest": "^3.0.0"
   },
   "engines": {
-     "node": "v8.11.2" 
+     "node": "v8.11.2"
    }
 }
