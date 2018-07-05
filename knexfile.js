@@ -1,7 +1,7 @@
 const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = require('./env');
 
 module.exports = {
-  [process.env.NODE_ENV]: {
+  development: {
     client: 'pg',
     connection: {
       host: PGHOST,
@@ -14,10 +14,32 @@ module.exports = {
     },
     seeds: {
       directory: `./db/seeds`
+    }
+  },
+  test: {
+    client: 'pg',
+    connection: {
+      host: PGHOST,
+      database: PGDATABASE,
+      user: PGUSER,
+      password: PGPASSWORD
     },
-    "production":
-    {"client": "pg",
-    "connection": process.env.DATABASE_URL  }
+    migrations: {
+      directory: './db/migrations'
+    },
+    seeds: {
+      directory: `./db/seeds`
+    }
+  },
+  production: {
+    client: "pg",
+    connection: process.env.DATABASE_URL,
+    migrations: {
+      directory: './db/migrations'
+    },
+    seeds: {
+      directory: './db/seeds'
+    }
   }
-};
+}
 //check

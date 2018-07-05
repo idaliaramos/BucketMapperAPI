@@ -5,7 +5,6 @@
  */
 
 var index = require('../index');
-//i think there is an issue here
 var debug = require('debug')('BucketMapperAPI:server');
 var http = require('http');
 
