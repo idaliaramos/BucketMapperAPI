@@ -8,7 +8,7 @@ const jwt = require('express-jwt');
 // const UnauthorizedError = require('express-jwt/lib/errors/UnauthorizedError');
 //const Boom = require('boom');
 const server = express();
-console.log(proJWT_KEY, 'jsonwebtoken')
+console.log(JWT_KEY, 'jsonwebtoken')
 server.use(bodyParser.json());
 server.use(morgan('dev'));
 server.use(cors()); // TODO: lock this down further, currently allows ALL requests
