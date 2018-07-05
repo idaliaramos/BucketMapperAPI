@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node index.js",
     "knex": "knex",
-    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --postgress",
     "nodemon": "index.js"
   },
   "repository": {
