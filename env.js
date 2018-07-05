@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== 'production') {
     path: `.env.${process.env.NODE_ENV}`
   });
 }
-// console.log(process.env.NODE_ENV, 'this is the process <<<<<<<<<<<<<<<<');
+console.log(process.env.NODE_ENV, 'this is the process <<<<<<<<<<<<<<<<');
 module.exports = {
   DEBUG: parseInt(process.env.DEBUG || 0),
   PGHOST: process.env.PGHOST,

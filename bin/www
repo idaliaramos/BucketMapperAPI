@@ -5,7 +5,8 @@
  */
 
 var index = require('../index');
-var debug = require('debug')('warmup:server');
+//i think there is an issue here
+var debug = require('debug')('BucketMapperAPI:server');
 var http = require('http');
 
 /**
