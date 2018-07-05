@@ -1,9 +1,9 @@
-if (process.env.NODE_ENV !== 'production') {
+
   process.env.NODE_ENV = process.env.NODE_ENV || 'development';
   require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`
   });
-}
+
 console.log(process.env.NODE_ENV, 'this is the process <<<<<<<<<<<<<<<<');
 console.log(process.env.PGHOST, 'this is the host<<<<<<<<<<<<<<<<');
 console.log(process.env.JWT_KEY, 'this is the kye <<<<<<<<<<<<<<<<');
