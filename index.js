@@ -8,7 +8,7 @@ const jwt = require('express-jwt');
 // const UnauthorizedError = require('express-jwt/lib/errors/UnauthorizedError');
 //const Boom = require('boom');
 const server = express();
-console.log(process.env.JWT_KEY, 'jsonwebtoken')
+console.log(proJWT_KEY, 'jsonwebtoken')
 server.use(bodyParser.json());
 server.use(morgan('dev'));
 server.use(cors()); // TODO: lock this down further, currently allows ALL requests
@@ -49,7 +49,10 @@ server.use((err, _req, res, _next) => {
   }
 });
 
-const port = process.env.PORT || 8000
+const port =
+  process.env.PORT && /^\d+$/.test(process.env.PORT)
+    ? parseInt(process.env.PORT)
+    : 8000;
 
 server.listen(port, () => {
   console.log(`Listening on port ${port}`); // eslint-disable-line no-console

@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./bin/www",
     "knex": "knex",
-    "nodemon": "index.js"
+    "nodemon": " nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
