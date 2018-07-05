@@ -53,7 +53,7 @@ server.use((err, _req, res, _next) => {
 const port =
   process.env.PORT && /^\d+$/.test(process.env.PORT)
     ? parseInt(process.env.PORT)
-    : 5000;
+    : 8000;
 
 server.listen(port, () => {
   console.log(`Listening on port ${port}`); // eslint-disable-line no-console
