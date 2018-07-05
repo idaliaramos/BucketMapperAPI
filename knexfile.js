@@ -5,7 +5,7 @@ module.exports = {
     client: 'pg',
     connection: {
       host: PGHOST,
-      database: process.env.DATABASE_URL,
+      database: PGDATABASE,
       user: PGUSER,
       password: PGPASSWORD
     },
@@ -14,6 +14,11 @@ module.exports = {
     },
     seeds: {
       directory: `./db/seeds`
-    }
+    },
+    "production": {
+    "client": "pg",
+    "connection": process.env.DATABASE_URL,
+
+  }
   }
 };
