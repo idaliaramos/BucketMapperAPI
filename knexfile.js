@@ -5,7 +5,7 @@ module.exports = {
     client: 'pg',
     connection: {
       host: PGHOST,
-      database: PGDATABASE,
+      database: process.env.DATABASE_URL,
       user: PGUSER,
       password: PGPASSWORD
     },
