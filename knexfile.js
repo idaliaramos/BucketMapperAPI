@@ -10,10 +10,10 @@ module.exports = {
       password: PGPASSWORD
     },
     migrations: {
-      directory: './db/migrations'
+      directory: '../db/migrations'
     },
     seeds: {
-      directory: `./db/seeds`
+      directory: `../db/seeds`
     },
     "production": {
     "client": "pg",
