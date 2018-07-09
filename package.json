@@ -7,7 +7,7 @@
     "start": "node ./index.js",
     "knex": "knex",
     "nodemon": " nodemon ./index.js",
-    "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run"
+
   },
   "repository": {
     "type": "git",
