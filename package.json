@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node ./index.js",
     "knex": "knex",
-    "nodemon": " nodemon ./index.js",
-
+    "nodemon": " nodemon ./index.js"
   },
   "repository": {
     "type": "git",
