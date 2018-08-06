@@ -17,4 +17,9 @@ or make an account @ https://react-bucketmapper.herokuapp.com/
 ![bucketmapper-login](https://user-images.githubusercontent.com/24365319/35661142-0bccd0e2-06c5-11e8-8f0f-5746618b2f6a.png)
 ![bucketmapper-maui-adventurepage](https://user-images.githubusercontent.com/24365319/35661138-08408752-06c5-11e8-9d05-c8efa5b21b26.png)
 
+## Uses
+* Able to POST destinations and adventures
+* Able to GET destinations and adventures that contain key information about your trip
+* Able to EDIT and DELETE information
+
 # Thanks for checking out my project!
